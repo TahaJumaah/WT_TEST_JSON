@@ -6,9 +6,9 @@ const language = {
   target_language: "French",
 };
 
-async function readFileAndCreatePrompt(fileName) {
+async function readFileAndCreatePrompt() {
   try {
-    const file = await fs.readFile(`./${fileName}.json`, {
+    const file = await fs.readFile(`./${process.argv[2]}`, {
       encoding: "utf-8",
     });
 
@@ -24,4 +24,4 @@ async function readFileAndCreatePrompt(fileName) {
   }
 }
 
-readFileAndCreatePrompt("input_prompt");
+readFileAndCreatePrompt();
