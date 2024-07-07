@@ -1,16 +1,23 @@
 {
   "name": "wt_test_json",
   "version": "1.0.0",
-  "type": "module",
+  "type": "commonjs",
   "description": "A test program to do mustache templating.",
-  "main": "mustache.js",
+  "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node mustache.js"
+    "start": "node main.js",
+    "dev": "nodemon main.js"
   },
   "author": "Taha Jumaah",
   "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.14.10",
+    "nodemon": "^3.1.4",
+    "typescript": "^5.6.0-dev.20240706"
+  },
   "dependencies": {
-    "mustache": "^4.2.0"
+    "@types/mustache": "^4.1.0",
+    "mustache": "^4.1.0"
   }
 }
