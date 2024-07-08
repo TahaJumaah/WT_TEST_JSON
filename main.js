@@ -58,7 +58,6 @@ function readFileAndCreatePrompt(fileName) {
                         promptJSON = JSON.parse(file);
                         formattedPrompts = promptJSON.prompts.join("\n");
                         finalOutput = mustache.render(formattedPrompts, language);
-                        console.log("watching before returning the final output");
                         return [2 /*return*/, finalOutput];
                     }
                     return [3 /*break*/, 3];
@@ -76,7 +75,6 @@ var outputConsole = function () { return __awaiter(void 0, void 0, void 0, funct
     return __generator(this, function (_c) {
         switch (_c.label) {
             case 0:
-                console.log("outputConsole");
                 _b = (_a = console).log;
                 return [4 /*yield*/, readFileAndCreatePrompt("./".concat(process.argv[2]))];
             case 1:
@@ -85,4 +83,4 @@ var outputConsole = function () { return __awaiter(void 0, void 0, void 0, funct
         }
     });
 }); };
-console.log(outputConsole());
+outputConsole();

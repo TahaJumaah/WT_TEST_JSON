@@ -1,7 +1,12 @@
 import * as mustache from "mustache";
 import * as fs from "node:fs/promises";
 
-const language = {
+type languageDef = {
+  source_language: string;
+  target_language: string;
+};
+
+const language: languageDef = {
   source_language: "English",
   target_language: "French",
 };
@@ -16,7 +21,6 @@ async function readFileAndCreatePrompt(fileName: string) {
       const promptJSON = JSON.parse(file);
       const formattedPrompts = promptJSON.prompts.join("\n");
       const finalOutput = mustache.render(formattedPrompts, language);
-      console.log("watching before returning the final output");
       return finalOutput;
     }
   } catch (error) {
@@ -29,4 +33,4 @@ const outputConsole = async () => {
   console.log(await readFileAndCreatePrompt(`./${process.argv[2]}`));
 };
 
-console.log(outputConsole());
+outputConsole();

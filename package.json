@@ -7,17 +7,17 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node main.js",
-    "dev": "nodemon main.js"
+    "build": "npx tsc main.ts"
   },
   "author": "Taha Jumaah",
   "license": "ISC",
   "devDependencies": {
+    "@types/mustache": "^4.1.0",
     "@types/node": "^20.14.10",
     "nodemon": "^3.1.4",
     "typescript": "^5.6.0-dev.20240706"
   },
   "dependencies": {
-    "@types/mustache": "^4.1.0",
     "mustache": "^4.1.0"
   }
 }
